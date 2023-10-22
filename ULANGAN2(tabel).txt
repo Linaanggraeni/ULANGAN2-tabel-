@@ -1,0 +1,33 @@
+	1. SELECT tb_employee.full_name, tb_employee.id_job, tb_jobs.name_jobs
+	FROM employee
+	INNER JOIN tb_jobs ON tb_employee.id_job=tb_jobs.id_job;
+	
+	2.SELECT tb_employee.,tb_jobs.
+	FROM tb_employee
+	LEFT JOIN tb_jobs ON tb_employee.id_job=tb_jobs.id_job
+	WHERE  tb_jobs.id_job is null;
+	
+	3.SELECT tb_employee.,tb_jobs.
+	FROM tb_employee
+	RIGHT JOIN tb_jobs ON tb_employee.id_job=tb_jobs.id_job
+	WHERE  tb_employee.id_job is null;
+	
+	4.SELECT tb_employee.*, tb_jobs. * FROM tb_employee JOIN tb_jobs ON tb_employee.id_job
+	=tb _jobs.id_job WHERE gender = "M" ORDER BY date_birth ASC;
+	
+	
+	5.SELECT tb_employee.,tb_jobs.
+	FROM tb_employee
+	LEFT JOIN tb_jobs ON tb_employee.id_job=tb_jobs.id_job
+	WHERE gender ='F' AND (place_birth ='Bandung' OR place_birth = 'jakarta')
+	ORDER BY date_birth DESC;
+	
+	6.SELECT  tb_jobs.name_job, COUNT(tb_employee.id_emplo)
+	FROM tb_employee RIGHT JOIN tb_jobs
+	ON tb_employee.id_job = tb_jobs.id_job
+	GROUP BY tb_jobs.name_job;
+	
+	7.SELECT tb_employee.,tb_jobs.
+	FROM tb_employee
+	LEFT JOIN tb_jobs ON tb_employee.id_job=tb_jobs.id_job
+ 	WHERE date_birth BETWEEN '1999-01-01' AND '2001-12-12';
